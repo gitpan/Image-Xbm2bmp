@@ -1,8 +1,8 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Image-Xbm2bmp
-version:      0.01
-version_from: Xbm2bmp.pm
+version:      0.02
+version_from: lib/Image/Xbm2bmp.pm
 installdirs:  site
 requires:
 

@@ -2,33 +2,10 @@
 #include "perl.h"
 #include "XSUB.h"
 
-static int
-not_here(char *s)
-{
-    croak("%s not implemented on this architecture", s);
-    return -1;
-}
+#include "ppport.h"
 
-static double
-constant(char *name, int len, int arg)
-{
-    errno = EINVAL;
-    return 0;
-}
+#include "const-c.inc"
 
 MODULE = Image::Xbm2bmp		PACKAGE = Image::Xbm2bmp		
 
-
-double
-constant(sv,arg)
-    PREINIT:
-	STRLEN		len;
-    INPUT:
-	SV *		sv
-	char *		s = SvPV(sv, len);
-	int		arg
-    CODE:
-	RETVAL = constant(s,len,arg);
-    OUTPUT:
-	RETVAL
-
+INCLUDE: const-xs.inc

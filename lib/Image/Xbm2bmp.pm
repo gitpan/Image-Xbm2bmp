@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
 	my $class = shift;
@@ -256,7 +256,8 @@ Image::Xbm2bmp - for converting image file from XBM  to BMP.
   #Create a object from array data
   my $xbm_width = 32;
   my $xbm_height = 24;
-  my @xbm_data = (	0x7c,0x3c,0x7c,0x3c,
+  my @xbm_data = (
+					0x7c,0x3c,0x7c,0x3c,
 					0xfe,0x7c,0xfe,0x7c,
 					0xee,0xee,0xee,0xee,
 					0xe0,0xee,0x60,0xee,
@@ -266,7 +267,7 @@ Image::Xbm2bmp - for converting image file from XBM  to BMP.
 					0xfe,0x7e,0xfe,0x7e,
 					0xfe,0x3c,0x7c,0x3c 
 				);
-  my $obj = Image::Xbm2bmp();
+  my $obj = Image::Xbm2bmp->new();
   $obj->load_xbm_data(\@xbm_data,$xbm_width,$xbm_height);
 
   #Save as a BMP file
@@ -297,7 +298,8 @@ None by default.
 
 =head1 AUTHOR
 
-huang xin<lt>hx1978@hotmail.com<gt>
+huang xin 
+hx1978@hotmail.com
 
 =head1 SEE ALSO
 
